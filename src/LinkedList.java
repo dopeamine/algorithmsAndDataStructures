@@ -24,7 +24,6 @@ public class LinkedList {
         newNode.next = head;
         head = newNode;
     }
-
     public void insertAfter(Node prevNode, int newData){
         if (prevNode == null){
             System.out.println("Given previous node cannot be null");
@@ -34,7 +33,6 @@ public class LinkedList {
         newNode.next = prevNode.next;
         prevNode.next = newNode;
     }
-
     public void append(int newData){
         Node newNode = new Node(newData);
         if (head==null){
@@ -47,5 +45,22 @@ public class LinkedList {
             last = last.next;
 
         last.next = newNode;
+    }
+    public void deleteNode(int key){
+        Node temp = head, prev = null; // prev node needed to link to next node
+        //if node to be deleted is the head node
+        if (temp != null && temp.data == key){
+            head = temp.next;
+            return;
+        }
+        //traverse list to search for key to be deleted
+        while(temp != null && temp.data != key){
+            prev =  temp;
+            temp = temp.next;
+        }
+        //if key was not present in linked list, temp is null
+        if (temp == null) return;
+        //unlink node from linked list
+        prev.next = temp.next;
     }
 }
