@@ -63,4 +63,17 @@ public class LinkedList {
         //unlink node from linked list
         prev.next = temp.next;
     }
+    public int iterativeCount(){
+        int count = 0;
+        Node temp = head;
+        while(temp != null){
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+    public int recursiveCount(Node node){
+        if (node == null) return 0;
+        return 1 + recursiveCount(node.next);
+    }
 }

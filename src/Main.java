@@ -41,5 +41,13 @@ public class Main {
         linkedList.deleteNode(3);
         linkedList.printList();
 
+        // display count of linkedlist using iterative count
+        System.out.println("Counting (iterative method) number of elements in linked list");
+        System.out.println(linkedList.iterativeCount());
+
+        // display count of linkedlist using recursive count
+        System.out.println("Counting (recursive method) number of elements in linked list");
+        System.out.println(linkedList.recursiveCount(linkedList.head));
+
     }
 }
