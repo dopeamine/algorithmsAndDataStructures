@@ -125,4 +125,47 @@ public class LinkedList {
         head=prev;
         return head;
     }
+//    public Node recursiveReverse(Node head){
+//       Node first=null, rest=null;
+//       first=head;
+//       rest=head.next;
+//       if(rest==null){
+//           return first;
+//       }
+//       recursiveReverse(rest);
+//       first.next.next=first;
+//       first.next=null;
+//       head=rest;
+//       return head;
+//    }
+    public Node mergeSorted(Node head1, Node head2){
+        //using new node and append elements
+        Node mainHead=null;
+        Node tempHead=null;
+        Node mergedHead=null;
+        boolean firstIter=true;
+        while (head1!=null&&head2!=null){
+            System.out.println(head1.data+"  "+head2.data);
+            if (head1.data<head2.data){
+                tempHead=head1;
+                tempHead.next=head2;
+                //tempHead=head2;
+            }else{
+                tempHead=head2;
+                tempHead.next=head1;
+                //tempHead=head1;
+
+            }
+            if (firstIter){
+                mainHead=tempHead;
+                mergedHead=mainHead.next;
+                firstIter=false;
+            }else {
+                mergedHead.next=tempHead;
+            }
+            if (head1.next!=null) head1=head1.next;
+            if (head2.next!=null) head2=head2.next;
+        }
+        return mainHead;
+    }
 }

@@ -75,6 +75,28 @@ public class Main {
         System.out.println("Reversing linked list");
         head = linkedList.reverseList(head);
         linkedList.printList(head);
+//        System.out.println("Reversing linked list using recursive method");
+//        head = linkedList.recursiveReverse(head);
+//        linkedList.printList(head);
+
+        //merge two sorted linked list
+        //define 2 new linked lists
+        int[] arr1={3,5,8,24,65};
+        int[] arr2={2,6,9,15,36};
+        LinkedList.Node head1=new LinkedList.Node(1);
+        LinkedList.Node head2=new LinkedList.Node(0);
+        for (int i=0;i<arr1.length;i++){
+            linkedList.append(arr1[i],head1);
+            linkedList.append(arr2[i],head2);
+        }
+        System.out.println("Printing new lists");
+        linkedList.printList(head1);
+        linkedList.printList(head2);
+        //call the merge function
+        LinkedList.Node newHead=linkedList.mergeSorted(head1, head2);
+        linkedList.printList(newHead);
+        //linkedList.printList(head1);
+        linkedList.printList(head2);
 
     }
 }
