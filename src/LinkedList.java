@@ -2,7 +2,7 @@
  * Created by shant on 20-12-2016.
  */
 public class LinkedList {
-    Node head;
+    //Node head;
 /* Linked list Node.  This inner class is made static so that main() can access it */
     static class Node{
         int data;
@@ -12,7 +12,7 @@ public class LinkedList {
             next = null;
         }
     }
-    public void printList(){
+    public void printList(Node head){
         Node node = head;
         while (node != null){
             System.out.print(node.data+"\t");
@@ -20,21 +20,24 @@ public class LinkedList {
         }
         System.out.println();
     }
-    public void push(int newData){
+    public Node push(int newData, Node head){
         Node newNode = new Node(newData);
         newNode.next = head;
         head = newNode;
+        return head;
     }
-    public void insertAfter(Node prevNode, int newData){
-        if (prevNode == null){
-            System.out.println("Given previous node cannot be null");
-            return;
+    public Node insertAfter(Node head, int data, int newData){
+        Node tempHead=head;
+        if(head==null) return null;
+        while(head!=null && head.data!=data){
+            head=head.next;
         }
         Node newNode = new Node(newData);
-        newNode.next = prevNode.next;
-        prevNode.next = newNode;
+        newNode.next = head.next;
+        head.next = newNode;
+        return tempHead;
     }
-    public void append(int newData){
+    public void append(int newData,Node head){
         Node newNode = new Node(newData);
         if (head==null){
             head = newNode;
@@ -47,7 +50,7 @@ public class LinkedList {
 
         last.next = newNode;
     }
-    public void deleteNode(int key){
+    public void deleteNode(int key,Node head){
         Node temp = head, prev = null; // prev node needed to link to next node
         //if node to be deleted is the head node
         if (temp != null && temp.data == key){
@@ -64,7 +67,7 @@ public class LinkedList {
         //unlink node from linked list
         prev.next = temp.next;
     }
-    public int iterativeCount(){
+    public int iterativeCount(Node head){
         int count = 0;
         Node temp = head;
         while(temp != null){
@@ -73,11 +76,11 @@ public class LinkedList {
         }
         return count;
     }
-    public int recursiveCount(Node node){
-        if (node == null) return 0;
-        return 1 + recursiveCount(node.next);
+    public int recursiveCount(Node head){
+        if (head== null) return 0;
+        return 1 + recursiveCount(head.next);
     }
-    public void swapKeys(int key1, int key2){
+    public void swapKeys(int key1, int key2, Node head){
         if (key1==key2) return;
 
         Node temp1 = head;
@@ -110,5 +113,16 @@ public class LinkedList {
         temp1.next=temp2.next;
         temp2.next=temp;
 
+    }
+    public Node reverseList(Node head){
+        Node prev=null, curr=head, next=null;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+        return head;
     }
 }
