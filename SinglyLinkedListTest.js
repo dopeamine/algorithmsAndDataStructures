@@ -40,7 +40,7 @@ let MyLinkedList = new SinglyLinkedList();
 // MyLinkedList.deleteAtIndex(4);
 // MyLinkedList.print();
 
-// Custom test - Leet Code
+// // Custom test - Leet Code
 // MyLinkedList.addAtHead(8)
 // MyLinkedList.print()
 // MyLinkedList.get(1)
@@ -259,16 +259,16 @@ let MyLinkedList = new SinglyLinkedList();
 // MyLinkedList.print();
 
 // More custom test cases
-// MyLinkedList.addAtHead(1);
-// MyLinkedList.print();
-// MyLinkedList.addAtIndex(1,2);
-// MyLinkedList.print();
-// MyLinkedList.get(1);
-// MyLinkedList.print();
-// MyLinkedList.get(0);
-// MyLinkedList.print();
-// MyLinkedList.get(2);
-// MyLinkedList.print();
+MyLinkedList.addAtHead(1);
+MyLinkedList.print();
+MyLinkedList.addAtIndex(1,2);
+MyLinkedList.print();
+MyLinkedList.get(1);
+MyLinkedList.print();
+MyLinkedList.get(0);
+MyLinkedList.print();
+MyLinkedList.get(2);
+MyLinkedList.print();
 
 // //Another test case
 // MyLinkedList.get(0);
@@ -286,27 +286,27 @@ let MyLinkedList = new SinglyLinkedList();
 // MyLinkedList.get(1);
 // MyLinkedList.print();
 
-//another test case
-MyLinkedList.addAtHead(0);
-MyLinkedList.print();
-MyLinkedList.addAtIndex(1,9);
-MyLinkedList.print();
-MyLinkedList.addAtIndex(1,5);
-MyLinkedList.print();
-MyLinkedList.addAtTail(7);
-MyLinkedList.print();
-MyLinkedList.addAtHead(1);
-MyLinkedList.print();
-MyLinkedList.addAtIndex(5,8);
-MyLinkedList.print();
-MyLinkedList.addAtIndex(5,2);
-MyLinkedList.print();
-MyLinkedList.addAtIndex(3,0);
-MyLinkedList.print();
-MyLinkedList.addAtTail(1);
-MyLinkedList.print();
-MyLinkedList.addAtTail(0);
-MyLinkedList.print();
-MyLinkedList.deleteAtIndex(6);
-MyLinkedList.print();
+// //another test case
+// MyLinkedList.addAtHead(0);
+// MyLinkedList.print();
+// MyLinkedList.addAtIndex(1,9);
+// MyLinkedList.print();
+// MyLinkedList.addAtIndex(1,5);
+// MyLinkedList.print();
+// MyLinkedList.addAtTail(7);
+// MyLinkedList.print();
+// MyLinkedList.addAtHead(1);
+// MyLinkedList.print();
+// MyLinkedList.addAtIndex(5,8);
+// MyLinkedList.print();
+// MyLinkedList.addAtIndex(5,2);
+// MyLinkedList.print();
+// MyLinkedList.addAtIndex(3,0);
+// MyLinkedList.print();
+// MyLinkedList.addAtTail(1);
+// MyLinkedList.print();
+// MyLinkedList.addAtTail(0);
+// MyLinkedList.print();
+// MyLinkedList.deleteAtIndex(6);
+// MyLinkedList.print();
 

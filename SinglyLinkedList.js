@@ -16,6 +16,7 @@ class SinglyLinkedList {
         let tempIndex = index;
         if (tempIndex < 0 || tempIndex > this.count - 1) {
             console.log("Invalid index");
+            return -1;
         } else {
             let head = this.head;
             while (tempIndex > 0) {
@@ -23,6 +24,7 @@ class SinglyLinkedList {
                 tempIndex--;
             }
             console.log(`Element at ${index} is ${head.value}`);
+            return head.value;
         }
     }
 
@@ -58,9 +60,10 @@ class SinglyLinkedList {
         let tempIndex = index;
         if (tempIndex < 0 || tempIndex > this.count) {
             console.log("Invalid index");
+            return -1;
         } else {
             let prev = this.head;
-            while (tempIndex > 0) {
+            while (tempIndex > 1) {
                 prev = prev.next;
                 tempIndex--;
             }
@@ -71,6 +74,7 @@ class SinglyLinkedList {
             } else {
                 node.next = prev.next;
                 prev.next = node;
+                if (prev === this.tail) this.tail = node;
                 this.count++;
             }
         }
@@ -79,14 +83,16 @@ class SinglyLinkedList {
 
     deleteAtIndex(index) {
         let tempIndex = index;
-        if (tempIndex < 0 || tempIndex > this.count) {
+        if (tempIndex < 0 || tempIndex > this.count - 1) {
             console.log("Invalid index");
+            return -1;
         } else {
             let prev = this.head;
-            while (tempIndex > 0) {
+            while (tempIndex > 1) {
                 prev = prev.next;
                 tempIndex--;
             }
+            console.log(prev);
             if (this.tail === prev.next) {
                 prev.next = null;
                 this.tail = prev;
